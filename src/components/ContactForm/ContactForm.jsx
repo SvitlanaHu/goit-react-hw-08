@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from './ContactForm.module.css';
 import Button from "../Button/Button";
-import { addContacts } from "../../redux/operations";
+import { addContacts } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
 
 const userSchema = Yup.object().shape({

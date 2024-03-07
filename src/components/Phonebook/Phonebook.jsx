@@ -3,8 +3,8 @@ import { Loader } from "../Loader/Loader";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from './Phonebook.module.css';
-import { selectError, selectIsLoading } from "../../redux/selector";
-import { fetchContacts } from "../../redux/operations";
+import { selectError, selectIsLoading } from "../../redux/auth/selector";
+import { fetchContacts } from "../../redux/auth/operations";
 
 const ContactForm = lazy(() => import("../ContactForm/ContactForm"));
 const ContactList = lazy(() => import("../ContactList/ContactList"));

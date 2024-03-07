@@ -1,21 +1,43 @@
 import { IoPerson } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
-import Button from '../Button/Button';
 import styles from './Contact.module.css';
+import { useDispatch } from "react-redux";
+import { deleteContacts } from "../../redux/Contacts/operations";
+import Button from "@mui/material/Button";
+import DeleteIcon from "@mui/icons-material/Delete";
+import toast from "react-hot-toast";
 
-const Contact = ({ id, name, number, onDelete }) => {
-  
+const Contact = ({ contact }) => {
+  const dispatch = useDispatch();
+
+  const handleDeleteContact = () => {
+    dispatch(deleteContacts(contact.id))
+      .unwrap()
+      .then(() => {
+        toast.success("The contact has been deleted");
+      })
+      .catch(() => {
+        toast.error("Deletion error ");
+      });
+  };
+
   return (
     <li className={styles.item}>
-        <div className={styles.box} id={id}>
+        <div className={styles.box}>
             <div className={styles.str}>
-                <IoPerson className={styles.icon} /><span className={styles.name}>   {name}</span>
+                <IoPerson className={styles.icon} /><span className={styles.name}>   {contact.name}</span>
             </div>
             <div className={styles.str}>
-                <FaPhoneAlt className={styles.icon} /><span className={styles.number}>   {number}</span>
+                <FaPhoneAlt className={styles.icon} /><span className={styles.number}>   {contact.number}</span>
             </div>
         </div>
-      <Button type={"button"} onClick={onDelete} id={id}>
+      <Button 
+        className={styles.btn}
+        variant="outlined"
+        size="small"
+        onClick={handleDeleteContact}
+        startIcon={<DeleteIcon />}
+      >
         Delete
       </Button>
     </li>
