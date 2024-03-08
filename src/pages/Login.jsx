@@ -1,5 +1,5 @@
 import { LoginForm } from "../components/LoginForm/LoginForm";
-import DocumentTitle from "../components/DocumentTitle";
+import {DocumentTitle} from "../components/DocumentTitle/DocumentTitle";
 
 const styles = {
   container: {

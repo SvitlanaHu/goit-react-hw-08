@@ -1,11 +1,13 @@
 import { RegisterForm } from "../components/RegisterForm/RegisterForm";
-import DocumentTitle from "../components/DocumentTitle";
+import DocumentTitle from "../components/DocumentTitle/DocumentTitle";
 
 const styles = {
   container: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    minWidth: "100%",
+    
   },
 };
 

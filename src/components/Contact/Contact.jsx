@@ -32,7 +32,7 @@ const Contact = ({ contact }) => {
             </div>
         </div>
       <Button 
-        className={styles.btn}
+        // className={styles.btn}
         variant="outlined"
         size="small"
         onClick={handleDeleteContact}
