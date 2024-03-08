@@ -81,7 +81,7 @@ export const LoginForm = () => {
           <ErrorMessage className={styles.error} name="number" component="span" />
         </div>
         <div className={styles.btnGroup}>
-          <Button type="submit" className={styles.button}>Log In</Button>
+          <Button type="submit">Log In</Button>
         </div>
       </Form>
     </Formik>

@@ -18,11 +18,8 @@ export default function NotFound() {
       </div>
       <div>
         <img
-        //   src="https://www.dreamhost.com/blog/wp-content/uploads/2022/10/404-Error-Message.jpg"
-          src="./notFound.png"
+          src="https://miro.medium.com/v2/resize:fit:828/format:webp/0*QOZm9X5er1Y0r5-t"
           alt="NotFoundImg"
-          width={360}
-          height={360}
         />
       </div>
     </div>

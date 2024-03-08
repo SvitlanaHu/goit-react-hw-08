@@ -1,5 +1,5 @@
 import styles from "./PhoneBook.module.css";
-import { selectError, selectIsLoading } from "../../redux/contacts/selector";
+import { selectError, selectIsLoading } from "../../redux/Contacts/selector";
 import { useSelector } from "react-redux";
 import { Loader } from "../Loader/Loader";
 
