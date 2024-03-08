@@ -1,4 +1,4 @@
-import DocumentTitle from "../Components/DocumentTitle";
+import DocumentTitle from "../components/DocumentTitle/DocumentTitle";
 const styles = {
   container: {
     minHeight: "calc(100vh - 50px)",

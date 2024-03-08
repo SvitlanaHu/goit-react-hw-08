@@ -1,34 +1,24 @@
-import { lazy, Suspense } from "react";
+import styles from "./PhoneBook.module.css";
+import { selectError, selectIsLoading } from "../../redux/contacts/selector";
+import { useSelector } from "react-redux";
 import { Loader } from "../Loader/Loader";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import styles from './Phonebook.module.css';
-import { selectError, selectIsLoading } from "../../redux/auth/selector";
-import { fetchContacts } from "../../redux/auth/operations";
 
-const ContactForm = lazy(() => import("../ContactForm/ContactForm"));
-const ContactList = lazy(() => import("../ContactList/ContactList"));
-const SearchBox = lazy(() => import("../SearchBox/SearchBox"));
+import { ContactForm } from "../ContactForm/ContactForm";
+import { SearchBox } from "../SearchBox/SearchBox";
+import { ContactList } from "../ContactList/ContactList";
 
-export function Phonebook() {
-  const dispatch = useDispatch();
+export default function PhoneBook() {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
   return (
-    <>
-      <div className={styles.container}>
-        <Suspense fallback={<Loader />}>
-          <h1>Phonebook</h1>
-          <ContactForm />
-          <SearchBox />
-          <ContactList />
-          {isLoading && !error && <Loader />}
-        </Suspense>
+    <div className={styles.box}>
+      <div className={styles.form}>
+        <h1 className={styles.title}>Phonebook</h1>
+        <ContactForm />
+        <SearchBox />
       </div>
-    </>
+      {isLoading && !error && <Loader />}
+      <ContactList />
+    </div>
   );
 }
