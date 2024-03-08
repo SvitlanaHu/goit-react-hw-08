@@ -41,7 +41,8 @@ export const RegisterForm = () => {
   };
 
   return (
-    <Formik
+    <div className={styles.container}>
+      <Formik
       initialValues={{
         name: "",
         email: "",
@@ -60,38 +61,41 @@ export const RegisterForm = () => {
     >
       <Form className={styles.form} autoComplete="on">
         <div className={styles.formGroup}>
-          <label htmlFor={userNameField} className={styles.label}>
-            Username
+          <label htmlFor={userNameField}>
+            Username:
           </label>
           <Field
-            className={styles.formFiled}
+            className={styles.label}
             type="text"
             name="name"
+            placeholder="Login"
             id={userNameField}
           />
 
           <ErrorMessage className={styles.error} name="name" component="span" />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor={emailField} className={styles.label}>
+          <label htmlFor={emailField}>
             Email
           </label>
           <Field
-            className={styles.formFiled}
+            className={styles.label}
             type="email"
             name="email"
+            placeholder="Email"
             id={emailField}
           />
           <ErrorMessage className={styles.error} name="name" component="span" />
         </div>
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor={passwordField}>
+          <label htmlFor={passwordField}>
             Password
           </label>
           <Field
-            className={styles.formFiled}
+            className={styles.label}
             type="password"
             name="password"
+            placeholder="Password"
             id={passwordField}
           />
           <ErrorMessage className={styles.error} name="number" component="span" />
@@ -103,5 +107,6 @@ export const RegisterForm = () => {
         </div>
       </Form>
     </Formik>
+    </div>
   );
 };

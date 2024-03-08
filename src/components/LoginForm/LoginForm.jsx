@@ -40,50 +40,58 @@ export const LoginForm = () => {
   };
 
   return (
-    <Formik
-      initialValues={{
-        email: "",
-        password: "",
-      }}
-      validationSchema={userSchema}
-      onSubmit={(values, actions) => {
-        const userData = {
-          email: values.email,
-          password: values.password,
-        };
-        handleLogin(userData);
-        actions.resetForm();
-      }}
-    >
-      <Form className={styles.form} autoComplete="on">
-        <div className={styles.box}>
-          <label htmlFor={emailField} className={styles.label}>
-            Email
-          </label>
-          <Field
-            className={styles.field}
-            type="email"
-            name="email"
-            id={emailField}
-          />
-          <ErrorMessage className={styles.error} name="name" component="span" />
-        </div>
-        <div className={styles.box}>
-          <label className={styles.label} htmlFor={passwordField}>
-            Password
-          </label>
-          <Field
-            className={styles.field}
-            type="password"
-            name="password"
-            id={passwordField}
-          />
-          <ErrorMessage className={styles.error} name="number" component="span" />
-        </div>
-        <div className={styles.btnGroup}>
-          <Button type="submit">Log In</Button>
-        </div>
-      </Form>
-    </Formik>
+    <div className={styles.container}>
+      <Formik
+        initialValues={{
+          email: "",
+          password: "",
+        }}
+        validationSchema={userSchema}
+        onSubmit={(values, actions) => {
+          const userData = {
+            email: values.email,
+            password: values.password,
+          };
+          handleLogin(userData);
+          actions.resetForm();
+        }}
+      >
+        <Form className={styles.form} autoComplete="on">
+          <div className={styles.box}>
+            <label htmlFor={emailField}>Email:</label>
+            <Field
+              className={styles.label}
+              type="email"
+              name="email"
+              placeholder="Email"
+              id={emailField}
+            />
+            <ErrorMessage
+                className={styles.error}
+                name="name"
+                component="span"
+            />
+          </div>
+          <div className={styles.box}>
+            <label htmlFor={passwordField}>Password:</label>
+            <Field
+              className={styles.label}
+              type="password"
+              name="password"
+              placeholder="Password"
+              id={passwordField}
+            />
+            <ErrorMessage
+              className={styles.error}
+              name="number"
+              component="span"
+            />
+          </div>
+         
+          <Button type="submit" className={styles.button}>Log In</Button>
+           
+        </Form>
+      </Formik>
+    </div>
   );
 };
