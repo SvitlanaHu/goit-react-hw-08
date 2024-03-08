@@ -31,3 +31,8 @@
 .link:focus {
   color: rgba(0, 71, 155, 1);
 }
+
+.img {
+  display: block;
+  width: 100%;
+}

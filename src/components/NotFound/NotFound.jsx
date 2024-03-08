@@ -18,7 +18,8 @@ export default function NotFound() {
       </div>
       <div>
         <img
-          src="https://miro.medium.com/v2/resize:fit:828/format:webp/0*QOZm9X5er1Y0r5-t"
+          className={styles.img}
+          src="https://indexsy.com/wp-content/uploads/2023/05/What-is-404-error.jpg"
           alt="NotFoundImg"
         />
       </div>
