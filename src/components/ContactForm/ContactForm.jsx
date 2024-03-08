@@ -3,8 +3,9 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from './ContactForm.module.css';
 import Button from "../Button/Button";
-import { addContacts } from "../../redux/auth/operations";
+import { addContacts } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 const userSchema = Yup.object().shape({
   name: Yup.string()
@@ -23,14 +24,18 @@ const userSchema = Yup.object().shape({
     .matches(/^\+?[0-9\s-]+$/, "Invalid phone number"),
 });
 
-const ContactForm = () => {
+export function ContactForm() {
   const nameField = useId();
   const numberField = useId();
   const dispatch = useDispatch();
-  const handleAddContact = (values, { setSubmitting, resetForm }) => {
-    dispatch(addContacts(values));
-    setSubmitting(false);
-    resetForm();
+  const handleAddContact = (newContact) => {
+    dispatch(addContacts(newContact)).unwrap()
+      .then(() => {
+        toast.success("Contact has been added");
+      })
+      .catch(() => {
+        toast.error("Creation error, try again");
+      });
   };
 
     return (
@@ -80,6 +85,4 @@ const ContactForm = () => {
             </Formik>
         </div>
     );
-};
-
-export default ContactForm;
+}
