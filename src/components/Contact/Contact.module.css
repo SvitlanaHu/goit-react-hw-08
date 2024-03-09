@@ -6,7 +6,7 @@
   padding: 20px;
   border-radius: 4px;
   background-color: rgb(31, 31, 37);
-  width: calc(100% / 2 - 20px);
+  width: calc(100% / 3 - 40px);
   /* max-width: 520px; */
 }
 
