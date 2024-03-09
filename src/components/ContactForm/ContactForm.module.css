@@ -1,6 +1,6 @@
 .container {
   margin-top: 20px;
-  min-width: 475px;
+  min-width: 100%;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 3px 3px 10px rgba(216, 212, 212, 0.5);
@@ -24,6 +24,8 @@
   width: 100%;
   display: block;
   font-weight: bold;
+  margin-bottom: 16px;
+  padding: 10px;
 }
 
 .field {

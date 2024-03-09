@@ -11,11 +11,13 @@ export const Navigation = () => {
       <NavLink className={styles.link} to="/">
         <Button variant="contained">Home</Button>
       </NavLink>
-      {isLoggedIn && (
-        <NavLink className={styles.link} to="/contacts">
-          <Button variant="contained">Contacts</Button>
-        </NavLink>
+      <div className={styles.nav}>
+         {isLoggedIn && (
+           <NavLink className={styles.link} to="/contacts">
+             <Button variant="contained">Contacts</Button>
+           </NavLink>
       )}
+      </div>
     </nav>
   );
 };

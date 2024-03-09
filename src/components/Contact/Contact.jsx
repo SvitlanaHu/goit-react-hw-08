@@ -4,14 +4,14 @@ import styles from './Contact.module.css';
 import { useDispatch } from "react-redux";
 import { deleteContacts } from "../../redux/Contacts/operations";
 import Button from "../Button/Button";
-// import DeleteIcon from "@mui/icons-material/Delete";
+import DeleteIcon from "@mui/icons-material/Delete";
 import toast from "react-hot-toast";
 
-const Contact = ({ contact }) => {
+const Contact = ({ name, number, id}) => {
   const dispatch = useDispatch();
 
   const handleDeleteContact = () => {
-    dispatch(deleteContacts(contact.id))
+    dispatch(deleteContacts(id))
       .unwrap()
       .then(() => {
         toast.success("The contact has been deleted");
@@ -25,17 +25,17 @@ const Contact = ({ contact }) => {
     <li className={styles.item}>
         <div className={styles.box}>
             <div className={styles.str}>
-                <IoPerson className={styles.icon} /><span className={styles.name}>   {contact.name}</span>
+                <IoPerson className={styles.icon} /><span className={styles.name}>   {name}</span>
             </div>
             <div className={styles.str}>
-                <FaPhoneAlt className={styles.icon} /><span className={styles.number}>   {contact.number}</span>
+                <FaPhoneAlt className={styles.icon} /><span className={styles.number}>   {number}</span>
             </div>
         </div>
       <Button 
         variant="outlined"
         size="small"
         onClick={handleDeleteContact}
-        // startIcon={<DeleteIcon />}
+        startIcon={<DeleteIcon />}
       >
         Delete
       </Button>
