@@ -22,7 +22,7 @@ export default function Home() {
       <div style={styles.container}>
         <h1 style={styles.title}>
           Congratulations!
-          You are on the Fonebook website.
+          You are on the Phonebook website.
           Sign in or register{" "}
           <span role="img" aria-label="Greeting icon">
             💁‍♀️
