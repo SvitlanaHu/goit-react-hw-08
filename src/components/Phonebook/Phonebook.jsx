@@ -1,13 +1,12 @@
-import styles from "./PhoneBook.module.css";
+import styles from "./Phonebook.module.css";
 import { selectError, selectIsLoading } from "../../redux/Contacts/selector";
 import { useSelector } from "react-redux";
 import { Loader } from "../Loader/Loader";
-
 import { ContactForm } from "../ContactForm/ContactForm";
 import { SearchBox } from "../SearchBox/SearchBox";
 import { ContactList } from "../ContactList/ContactList";
 
-export default function PhoneBook() {
+export default function Phonebook() {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   return (
