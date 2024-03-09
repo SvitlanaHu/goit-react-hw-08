@@ -36,7 +36,7 @@ const Contact = ({ contact }) => {
         variant="outlined"
         size="small"
         onClick={handleDeleteContact}
-        startIcon={<DeleteIcon />}
+        // startIcon={<DeleteIcon />}
       >
         Delete
       </Button>
