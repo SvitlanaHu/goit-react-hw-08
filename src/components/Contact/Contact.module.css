@@ -1,8 +1,6 @@
 .item {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: space-around;
   box-shadow: 4px 4px 10px #c6cccced;
   padding: 20px;
