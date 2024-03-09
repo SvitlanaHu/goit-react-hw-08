@@ -11,8 +11,7 @@ export const AuthNav = () => {
       <NavLink className={styles.link} to="/login">
         <Button
           variant="contained"
-          size="small
-		  "
+          size="small"
         >
           Log In
         </Button>

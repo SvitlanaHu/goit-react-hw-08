@@ -4,7 +4,7 @@ import styles from './Contact.module.css';
 import { useDispatch } from "react-redux";
 import { deleteContacts } from "../../redux/Contacts/operations";
 import Button from "../Button/Button";
-import DeleteIcon from "@mui/icons-material/Delete";
+// import DeleteIcon from "@mui/icons-material/Delete";
 import toast from "react-hot-toast";
 
 const Contact = ({ name, number, id}) => {
@@ -35,7 +35,7 @@ const Contact = ({ name, number, id}) => {
         variant="outlined"
         size="small"
         onClick={handleDeleteContact}
-        startIcon={<DeleteIcon />}
+        // startIcon={<DeleteIcon />}
       >
         Delete
       </Button>

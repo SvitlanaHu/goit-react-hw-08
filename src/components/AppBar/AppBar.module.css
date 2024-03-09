@@ -4,6 +4,7 @@
   justify-content: space-between;
   padding: 8px 20px;
   margin: auto;
+  min-width: 700px;
   gap: 12px;
   box-shadow: 3px 3px 10px rgba(216, 212, 212, 0.5);
   background-color: rgb(31, 31, 37);

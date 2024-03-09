@@ -8,6 +8,14 @@
   width: 475px;
 }
 
+.box,
+.form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
 .text {
   display: block;
 }
